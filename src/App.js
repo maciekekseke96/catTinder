@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getCategories } from './axios_request';
+import Header from './components/Header/Header';
 import './App.scss';
 
 class App extends Component {
@@ -20,8 +21,8 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <h1>Here will be The Cat Tinder</h1>
+      <div className="app">
+        <Header/>
       </div>
     );
   }
