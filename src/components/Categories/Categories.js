@@ -2,16 +2,12 @@ import React from 'react';
 import Category from '../Category/Category';
 import './Categories.scss';
 
-const Categories = () => {
+const Categories = ({ categories }) => {
   return (
     <div className="categories">
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-      <Category />
+      {categories.map(({id, name}) => {
+        return <Category key={id} id={id} name={name} />;
+      })}
     </div>
   );
 };

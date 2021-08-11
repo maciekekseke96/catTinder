@@ -2,11 +2,11 @@ import React from 'react';
 import Categories from '../components/Categories/Categories';
 import './SelectCategory.scss';
 
-const SelectCategory = () => {
+const SelectCategory = ({categories}) => {
   return (
     <div className="selectCategory_section">
-      <p class="title">Select a category</p>
-      <Categories />
+      <p className="title">Select a category</p>
+      <Categories categories={categories} />
     </div>
   );
 };

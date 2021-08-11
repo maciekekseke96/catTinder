@@ -26,7 +26,7 @@ class App extends Component {
       <div className="app">
         <Header/>
         <Switch>
-          <Route exact path="/" component={SelectCategory}></Route>
+          <Route exact path="/" render={()=><SelectCategory categories={this.state.categories}/>}></Route>
         </Switch>
       </div>
     );
