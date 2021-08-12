@@ -27,7 +27,7 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <SelectCategory/>}
+            render={() => <SelectCategory />}
           ></Route>
           <Route path="/petOrNot" render={() => <PetOrNot />}></Route>
         </Switch>
