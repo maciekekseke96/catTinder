@@ -16,4 +16,4 @@ const getData = async (path) => {
 
 export const getCategories = () => getData('categories');
 
-export const getImgDetails = (id) => getData(`images/search?category_ids=${id}`);
+export const getImgDetails = (id) => getData(`images/search?size=small&category_ids=${id}`);

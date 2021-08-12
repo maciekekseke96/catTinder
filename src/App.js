@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import { getCategories } from './axios_request';
 import Header from './components/Header/Header';
-import SelectCategory from './pages/SelectCategory';
+import SelectCategory from './pages/SelectCategory/SelectCategory';
+import PetOrNot from './pages/PetOrNot/PetOrNot';
 import './App.scss';
 
 class App extends Component {
@@ -24,9 +25,14 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Header/>
+        <Header />
         <Switch>
-          <Route exact path="/" render={()=><SelectCategory categories={this.state.categories}/>}></Route>
+          <Route
+            exact
+            path="/"
+            render={() => <SelectCategory categories={this.state.categories} />}
+          ></Route>
+          <Route path="/petOrNot" render={() => <PetOrNot />}></Route>
         </Switch>
       </div>
     );
