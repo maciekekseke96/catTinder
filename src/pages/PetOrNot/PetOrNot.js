@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RatePet from '../../components/RatePet/RatePet';
 import './PetOrNot.scss';
 
 class PetOrNot extends Component {
@@ -7,7 +8,13 @@ class PetOrNot extends Component {
   }
 
   render() {
-    return <div className="petOrNot"></div>;
+    return (
+      <div className="petOrNot">
+        <span className="selectedCategory">{`>${'Space'}`}</span>
+        <p className="title">Would you pet it?</p>
+        <RatePet />
+      </div>
+    );
   }
 }
 
