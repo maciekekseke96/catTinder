@@ -4,7 +4,7 @@ const api = axios.create({
   baseURL: 'https://api.thecatapi.com/v1/',
 });
 
-let config = {
+const config = {
   headers: { 'x-api-key': 'd3b8756c-45d8-471b-ba31-64d0422348ba' },
 };
 
