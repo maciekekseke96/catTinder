@@ -1,4 +1,5 @@
 export const votingDetailsActionTypes = {
+  RESET_DETAILS: 'RESET_DETAILS',
   UP_PETTED: 'UP_PETTED',
   UP_SKIPPED: 'UP_SKIPPED',
   UP_UNPETTED: 'UP_UNPETTED',

@@ -14,9 +14,13 @@ const votingDetailsReducer = (state = INITIAL_STATE, action) => {
     case votingDetailsActionTypes.UP_SKIPPED:
       return { ...state, skipped: state.skipped + 1 };
     case votingDetailsActionTypes.UP_UNPETTED:
-      return { ...state, unpetted: state.unpetted + 1};
+      return { ...state, unpetted: state.unpetted + 1 };
     case votingDetailsActionTypes.UP_VOTED:
       return { ...state, voted: state.voted + 1 };
+    case votingDetailsActionTypes.RESET_DETAILS:
+      return {
+        ...INITIAL_STATE,
+      };
     default:
       return state;
   }

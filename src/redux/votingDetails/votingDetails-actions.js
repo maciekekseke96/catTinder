@@ -1,24 +1,28 @@
 import { votingDetailsActionTypes } from './votingDetails-action-types';
 
-export const addPetted = () => ({
+const addPetted = () => ({
   type: votingDetailsActionTypes.UP_PETTED,
 });
 
-export const addUnpetted = () => ({
+const addUnpetted = () => ({
   type: votingDetailsActionTypes.UP_UNPETTED,
 });
 
-export const addSkipped = () => ({
+const addSkipped = () => ({
   type: votingDetailsActionTypes.UP_SKIPPED,
 });
 
-export const addVoted = () => ({
-    type: votingDetailsActionTypes.UP_VOTED,
-  });
+const addVoted = () => ({
+  type: votingDetailsActionTypes.UP_VOTED,
+});
+
+export const resetDetails = () => ({
+  type: votingDetailsActionTypes.RESET_DETAILS,
+});
 
 export const votingDetailsActions = {
   addPetted,
   addUnpetted,
   addSkipped,
-  addVoted
-}
+  addVoted,
+};
