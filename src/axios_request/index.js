@@ -18,4 +18,4 @@ export const getCategories = () => getData('categories');
 
 export const getImgDetails = (id) => getData(`images/search?size=small&category_ids=${id}`);
 
-export const get10Images = (id) => getData(`images/search?limit=10&category_ids=${id}`);
+export const get10Images = (id) => getData(`images/search?size=small&limit=10&category_ids=${id}`);

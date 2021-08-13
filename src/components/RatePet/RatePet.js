@@ -1,16 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RatingButton from '../RatingButton/RatingButton';
+import { votingDetailsActions } from '../../redux/votingDetails/votingDetails-actions';
 import { ReactComponent as PetIt } from './../../assets/Pet.svg';
 import { ReactComponent as SkipIt } from './../../assets/Skip.svg';
 import { ReactComponent as NoPet } from './../../assets/DontPet.svg';
 import './RatePet.scss';
 
-const RatePet = ({votingDetails, images}) => {
-
+const RatePet = ({
+  votingDetails,
+  images,
+  addPetted,
+  addSkipped,
+  addUnpetted,
+  addVoted,
+}) => {
   const votedCatsNumber = votingDetails.voted;
 
-  const styleObject = images?{backgroundImage:`url(${images[votedCatsNumber].url}`}:{};
+  const styleObject = images
+    ? { backgroundImage: `url(${images[votedCatsNumber].url}` }
+    : {};
+
+  const voteOnPet = (vote) => {
+    console.log('works');
+    addVoted();
+    switch (vote) {
+      case 'pet':
+        addPetted();
+        break;
+      case 'skip':
+        addSkipped();
+        break;
+      case 'nopet':
+        addUnpetted();
+        break;
+      default:
+        console.log('Bad Vote');
+    }
+  };
 
   return (
     <div className="ratePet_container">
@@ -19,12 +46,23 @@ const RatePet = ({votingDetails, images}) => {
         <div className="ratingButtons">
           <p className="title">{`Cat ${votedCatsNumber + 1}/10`}`</p>
           <RatingButton
+            handleVote={() => voteOnPet('nopet')}
             icon={NoPet}
             description="Don't pet it!"
             color={'red'}
           />
-          <RatingButton icon={SkipIt} description="Skip it!" color={'grey'} />
-          <RatingButton icon={PetIt} description="Pet it!" color={'green'} />
+          <RatingButton
+            handleVote={() => voteOnPet('skip')}
+            icon={SkipIt}
+            description="Skip it!"
+            color={'grey'}
+          />
+          <RatingButton
+            handleVote={() => voteOnPet('pet')}
+            icon={PetIt}
+            description="Pet it!"
+            color={'green'}
+          />
         </div>
       </div>
     </div>
@@ -36,4 +74,10 @@ const mapStateToProps = (state) => ({
   votingDetails: state.votingDetails,
 });
 
-export default connect(mapStateToProps, null)(RatePet);
+const mapDispatchToProps = (dispatch) => ({
+  addPetted: () => dispatch(votingDetailsActions.addPetted()),
+  addSkipped: () => dispatch(votingDetailsActions.addSkipped()),
+  addUnpetted: () => dispatch(votingDetailsActions.addUnpetted()),
+  addVoted: () => dispatch(votingDetailsActions.addVoted()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(RatePet);

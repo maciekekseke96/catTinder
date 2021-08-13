@@ -15,3 +15,10 @@ export const addSkipped = () => ({
 export const addVoted = () => ({
     type: votingDetailsActionTypes.UP_VOTED,
   });
+
+export const votingDetailsActions = {
+  addPetted,
+  addUnpetted,
+  addSkipped,
+  addVoted
+}
