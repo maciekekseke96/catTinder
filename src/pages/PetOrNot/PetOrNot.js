@@ -5,7 +5,7 @@ import './PetOrNot.scss';
 
 const PetOrNot = ({selectedCategory}) => {
   return (
-    <div className="petOrNot">
+    <div className="petOrNot__section">
       <span className="selectedCategory">{`>${
         selectedCategory && selectedCategory.name
       }`}</span>

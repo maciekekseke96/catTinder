@@ -1,0 +1,25 @@
+.customSummary {
+  border: 1px solid silver;
+  border-radius: 5px;
+  width: 30%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  .detailedSummary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    .detailedNumber {
+      font-weight: 700;
+    }
+
+    .detailedDescription {
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}

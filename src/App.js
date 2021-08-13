@@ -6,6 +6,7 @@ import { setCategories } from './redux/categories/categories-actions';
 import Header from './components/Header/Header';
 import SelectCategory from './pages/SelectCategory/SelectCategory';
 import PetOrNot from './pages/PetOrNot/PetOrNot';
+import Summary from './pages/Summary/Summary';
 import './App.scss';
 
 class App extends Component {
@@ -21,8 +22,9 @@ class App extends Component {
       <div className="app">
         <Header />
         <Switch>
-          <Route exact path="/" render={() => <SelectCategory />}></Route>
-          <Route path="/petOrNot" render={() => <PetOrNot />}></Route>
+          <Route exact path="/" render={() => <SelectCategory />}/>
+          <Route path="/petOrNot" render={() => <PetOrNot />}/>
+          <Route path="/summary" render={()=> <Summary/>}/>
         </Switch>
       </div>
     );
