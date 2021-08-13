@@ -7,6 +7,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10px 0 10px;
+
+  @media (max-width: 799px) {
+    margin: 10px;
+    width: 60%;
+  }
+
+  @media (max-width: 799px) {
+    margin: 10px;
+    width: 80%;
+  }
   .detailedSummary {
     display: flex;
     flex-direction: column;
