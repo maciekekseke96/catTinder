@@ -1,5 +1,6 @@
 import React from 'react';
 import SummaryDetails from '../../components/SummaryDetails/SummaryDetails';
+import FinalOptions from '../../components/FinalOptions/FinalOptions';
 import { connect } from 'react-redux';
 import './Summary.scss';
 
@@ -11,6 +12,7 @@ const Summary = ({ selectedCategory, votingDetails }) => {
       }`}</p>
       <p className="seenCatsNumber">Cat's seen: {votingDetails.voted}</p>
       <SummaryDetails />
+      <FinalOptions />
     </div>
   );
 };
