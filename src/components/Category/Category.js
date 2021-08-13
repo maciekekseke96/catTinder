@@ -22,6 +22,7 @@ const Category = withRouter(({ history, id, name, setSelectedCategory, setImages
 
   useEffect(() => {
     setImgDetails();
+     // eslint-disable-next-line
   }, []);
   return (
     <div

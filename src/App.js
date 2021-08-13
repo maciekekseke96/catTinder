@@ -9,12 +9,9 @@ import PetOrNot from './pages/PetOrNot/PetOrNot';
 import './App.scss';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   setCategories = async () => {
     const categories = await getCategories();
-    this.props.setCategories(categories)
+    this.props.setCategories(categories);
   };
   componentDidMount() {
     this.setCategories();
@@ -24,11 +21,7 @@ class App extends Component {
       <div className="app">
         <Header />
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => <SelectCategory />}
-          ></Route>
+          <Route exact path="/" render={() => <SelectCategory />}></Route>
           <Route path="/petOrNot" render={() => <PetOrNot />}></Route>
         </Switch>
       </div>
